@@ -8,5 +8,11 @@ module.exports = {
     "gatsby-plugin-emotion",
     "gatsby-plugin-gatsby-cloud",
     "gatsby-plugin-react-helmet",
+    {
+      resolve: "gatsby-plugin-mdx",
+      options: {
+        defaultLayouts: { default: require.resolve("./src/components/Layout") },
+      },
+    },
   ],
 };

@@ -6,8 +6,11 @@ import Layout from "../components/Layout";
 const IndexPage: React.FC<PageProps> = () => {
   return (
     <Layout>
-      <h1>My Website</h1>
-      <p>Coming soon! </p>
+      <h1>Coming Soon!</h1>
+      <p>
+        A blog about modern full stack web development, entrepreneurship, and
+        some data science sprinkled in.
+      </p>
     </Layout>
   );
 };

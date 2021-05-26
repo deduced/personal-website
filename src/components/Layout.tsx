@@ -6,7 +6,7 @@ import "@fontsource/roboto";
 import Header from "./Header";
 import useSiteMetadata from "../hooks/use-sitemetadata";
 
-const Layout: React.FC<{}> = ({ children }) => {
+const Layout: React.FC = ({ children }) => {
   const { title, description } = useSiteMetadata();
   {
     return (

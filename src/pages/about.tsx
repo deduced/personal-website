@@ -1,8 +1,8 @@
-import { Link } from "gatsby";
+import { Link, PageProps } from "gatsby";
 import React from "react";
 import Layout from "../components/Layout";
 
-const About: React.FC<{}> = ({}) => {
+const About: React.FC<PageProps> = ({}) => {
   return (
     <Layout>
       <h1>About Me</h1>

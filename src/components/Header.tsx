@@ -1,15 +1,18 @@
 import React from "react";
 import styled from "@emotion/styled";
 import { css } from "@emotion/react";
-import { Link } from "gatsby";
+import { GatsbyLinkProps, Link } from "gatsby";
 import "@fontsource/roboto/900.css";
 
-interface HeaderProps {}
+type LinkProps = {
+  fontWeight?: string;
+};
 
-const NavLink = styled(Link)`
+const NavLink = styled(Link)<LinkProps>`
   color: #222;
   font-size: 1rem;
   font-weight: ${({ fontWeight }) => fontWeight || "normal"};
+
   line-height: 1;
   margin: 0 0.5rem 0 0;
   padding: 0.25rem;
@@ -24,7 +27,7 @@ const NavLink = styled(Link)`
   }
 `;
 
-const Header: React.FC<HeaderProps> = ({}) => {
+const Header = () => {
   return (
     <header
       css={css`

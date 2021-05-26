@@ -5,9 +5,16 @@ import Layout from "../components/Layout";
 const About: React.FC<PageProps> = ({}) => {
   return (
     <Layout>
-      <h1>About Me</h1>
-      <p>This is my web site</p>
-      <Link to="/">Back to home</Link>
+      <h1>About</h1>
+      <p>Proper write-up coming soon. For now, you can check out my</p>
+      <Link to="https://github.com/deduced" target="_blank">
+        GitHub profile
+      </Link>{" "}
+      or{" "}
+      <Link to="https://www.linkedin.com/in/carlos-astrada/" target="_blank">
+        LinkedIn profile
+      </Link>
+      .
     </Layout>
   );
 };

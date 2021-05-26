@@ -1,5 +1,19 @@
 {
+  "include": ["./src/**/*"],
   "compilerOptions": {
-    "types": ["@emotion/react"]
-  }
+    "types": ["@emotion/react/types/css-prop"],
+    "target": "es5",
+    "module": "commonjs",
+    "lib": ["dom", "es2017"],
+    // "allowJs": true,
+    // "checkJs": true,
+    "jsx": "react",
+    "strict": true,
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "noEmit": true,
+    "skipLibCheck": true
+  },
+  "exclude": ["node_modules", "public", ".cache"]
 }

@@ -11,7 +11,7 @@ const IndexPage: React.FC<PageProps> = () => {
     <>
       <Hero />
       <Layout>
-        <h2>Read My Blog</h2>
+        <h2>Latest Blog Posts</h2>
         {posts.map((post: Post) => (
           <PostPreview key={post.slug} post={post} />
         ))}

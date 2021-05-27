@@ -11,6 +11,7 @@ interface PostTemplateProps {
       frontmatter: {
         title: string;
         author: string;
+        date: string;
       };
       body: string;
     };
@@ -23,6 +24,7 @@ export const query = graphql`
       frontmatter {
         title
         author
+        date
       }
       body
     }

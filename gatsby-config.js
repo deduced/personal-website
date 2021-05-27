@@ -8,6 +8,9 @@ module.exports = {
     "gatsby-plugin-emotion",
     "gatsby-plugin-gatsby-cloud",
     "gatsby-plugin-react-helmet",
+    "gatsby-plugin-image",
+    "gatsby-transformer-sharp",
+    "gatsby-plugin-sharp",
     {
       resolve: "gatsby-plugin-mdx",
       options: {
@@ -21,6 +24,13 @@ module.exports = {
       options: {
         name: "posts",
         path: "content/posts",
+      },
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "images",
+        path: "assets/images",
       },
     },
   ],

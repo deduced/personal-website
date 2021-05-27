@@ -1,9 +1,9 @@
 import * as React from "react";
 import { PageProps } from "gatsby";
-import Layout from "../components/Layout";
+import Layout from "../components/layout";
 import usePosts, { Post } from "../hooks/use-posts";
-import PostPreview from "../components/PostPreview";
-import Hero from "../components/Hero";
+import PostPreview from "../components/post-preview";
+import Hero from "../components/hero";
 
 const IndexPage: React.FC<PageProps> = () => {
   const posts = usePosts();

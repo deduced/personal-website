@@ -3,7 +3,7 @@ import { Global, css } from "@emotion/react";
 import Helmet from "react-helmet";
 import "@fontsource/lato";
 import "@fontsource/roboto";
-import Header from "./Header";
+import Header from "./header";
 import useSiteMetadata from "../hooks/use-sitemetadata";
 
 const Layout: React.FC = ({ children }) => {

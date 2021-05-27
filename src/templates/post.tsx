@@ -2,8 +2,8 @@ import React from "react";
 import { graphql } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import { css } from "@emotion/react";
-import Layout from "../components/Layout";
-import ReadLink from "../components/ReadLink";
+import Layout from "../components/layout";
+import ReadLink from "../components/read-link";
 
 interface PostTemplateProps {
   data: {

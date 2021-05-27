@@ -39,7 +39,7 @@ const Header = () => {
       `}
     >
       <NavLink to="/" fontWeight="bold">
-        Deducible.io
+        Deducible
       </NavLink>
 
       <nav

@@ -2,7 +2,7 @@ import React from "react";
 import { css } from "@emotion/react";
 import { Link } from "gatsby";
 import { Post } from "../hooks/use-posts";
-import ReadLink from "../components/ReadLink";
+import ReadLink from "./ReadLink";
 
 interface PostPreviewProps {
   post: Post;

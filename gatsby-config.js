@@ -17,6 +17,14 @@ module.exports = {
         defaultLayouts: {
           default: require.resolve("./src/components/layout.tsx"),
         },
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-highlight-code`,
+            options: {
+              lineNumbers: true,
+            },
+          },
+        ],
       },
     },
     {

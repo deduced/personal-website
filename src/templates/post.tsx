@@ -1,4 +1,5 @@
 import React from "react";
+import { format } from "date-fns";
 import { graphql } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import { css } from "@emotion/react";
@@ -33,6 +34,7 @@ export const query = graphql`
 
 const PostTemplate: React.FC<PostTemplateProps> = ({ data }) => {
   const post = data.mdx;
+  const formattedDate = format(new Date(post.frontmatter.date), "yyyy/dd/MM");
 
   return (
     <Layout>
@@ -42,7 +44,7 @@ const PostTemplate: React.FC<PostTemplateProps> = ({ data }) => {
           font-size: 0.75rem;
         `}
       >
-        posted by {post.frontmatter.author}
+        posted on {formattedDate}
       </p>
 
       <p>

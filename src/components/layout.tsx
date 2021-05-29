@@ -3,8 +3,11 @@ import { Global, css } from "@emotion/react";
 import Helmet from "react-helmet";
 import "@fontsource/lato";
 import "@fontsource/roboto";
+import { defineCustomElements as deckDeckGoHighlightElement } from "@deckdeckgo/highlight-code/dist/loader";
 import Header from "./header";
 import useSiteMetadata from "../hooks/use-sitemetadata";
+
+deckDeckGoHighlightElement();
 
 const Layout: React.FC = ({ children }) => {
   const { title, description } = useSiteMetadata();

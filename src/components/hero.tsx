@@ -55,10 +55,10 @@ const Hero: React.FC<HeroProps> = ({}) => {
   return (
     <ImageBackground Tag="section" fluid={image.sharp.fluid} fadeIn="soft">
       <TextBox>
-        <h1>Coming Soon!</h1>
+        <h1>Deducible</h1>
         <p>
           A blog about modern full stack web development, entrepreneurship, and
-          some data science sprinkled in.
+          data science.
         </p>
       </TextBox>
     </ImageBackground>

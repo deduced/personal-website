@@ -1,11 +1,11 @@
 import React from "react";
 import { css } from "@emotion/react";
 import { Link } from "gatsby";
-import { Post } from "../hooks/use-posts";
+import { TPost } from "../queries/post";
 import ReadLink from "./read-link";
 
 interface PostPreviewProps {
-  post: Post;
+  post: TPost;
 }
 
 const PostPreview: React.FC<PostPreviewProps> = ({ post }) => {

@@ -3,38 +3,13 @@ import { format } from "date-fns";
 import { graphql } from "gatsby";
 import { MDXProvider } from "@mdx-js/react";
 import { MDXRenderer } from "gatsby-plugin-mdx";
+import { IPostTemplateProps } from "../queries/post";
 import { css } from "@emotion/react";
 import Layout from "../components/layout";
 import ReadLink from "../components/read-link";
 import Link from "../components/link";
 
-interface PostTemplateProps {
-  data: {
-    mdx: {
-      frontmatter: {
-        title: string;
-        author: string;
-        date: string;
-      };
-      body: string;
-    };
-  };
-}
-
-export const query = graphql`
-  query ($slug: String!) {
-    mdx(frontmatter: { slug: { eq: $slug } }) {
-      frontmatter {
-        title
-        author
-        date
-      }
-      body
-    }
-  }
-`;
-
-const PostTemplate: React.FC<PostTemplateProps> = ({ data }) => {
+const PostTemplate: React.FC<IPostTemplateProps> = ({ data }) => {
   const post = data.mdx;
   const formattedDate = format(new Date(post.frontmatter.date), "yyyy/dd/MM");
 
@@ -62,4 +37,18 @@ const PostTemplate: React.FC<PostTemplateProps> = ({ data }) => {
     </Layout>
   );
 };
+
+export const query = graphql`
+  query ($slug: String!) {
+    mdx(frontmatter: { slug: { eq: $slug } }) {
+      frontmatter {
+        author
+        date
+        title
+      }
+      body
+    }
+  }
+`;
+
 export default PostTemplate;

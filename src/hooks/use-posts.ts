@@ -1,20 +1,5 @@
 import { graphql, useStaticQuery } from "gatsby";
-
-export type PostResult = {
-  frontmatter: {
-    author: string;
-    slug: string;
-    title: string;
-  };
-  excerpt: string;
-};
-
-export type Post = {
-  author: string;
-  slug: string;
-  title: string;
-  excerpt: string;
-};
+import { TPost, IPostQueryResult } from "../queries/post";
 
 const usePosts = () => {
   const data = useStaticQuery(graphql`
@@ -23,6 +8,7 @@ const usePosts = () => {
         nodes {
           frontmatter {
             author
+            date
             slug
             title
           }
@@ -33,13 +19,14 @@ const usePosts = () => {
   `);
 
   return data.allMdx.nodes.map(
-    (post: PostResult) =>
+    (post: IPostQueryResult) =>
       ({
-        title: post.frontmatter.title,
         author: post.frontmatter.author,
-        slug: post.frontmatter.slug,
+        date: post.frontmatter.date,
         excerpt: post.excerpt,
-      } as Post)
+        slug: post.frontmatter.slug,
+        title: post.frontmatter.title,
+      } as TPost)
   );
 };
 

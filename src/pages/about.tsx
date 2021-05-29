@@ -6,15 +6,29 @@ const About: React.FC<PageProps> = ({}) => {
   return (
     <Layout>
       <h1>About</h1>
-      <p>Proper write-up coming soon. For now, you can check out my</p>
-      <Link to="https://github.com/deduced" target="_blank">
-        GitHub profile
-      </Link>{" "}
-      or{" "}
-      <Link to="https://www.linkedin.com/in/carlos-astrada/" target="_blank">
-        LinkedIn profile
-      </Link>
-      .
+      <p>
+        A blog about full stack web development, entrepreneurship, and data
+        science. The focus is on practical applications, but I'll will include
+        bug-fixes or any other content that I think might be useful to myself or
+        the community at large.
+      </p>
+      <p>
+        This blog is open-source, so feel free to{" "}
+        <Link to="https://github.com/deduced/personal-website">
+          poke around.
+        </Link>
+      </p>
+      <p>
+        If you're curious learn more about me, visit my{" "}
+        <Link to="https://github.com/deduced" target="_blank">
+          GitHub
+        </Link>{" "}
+        or{" "}
+        <Link to="https://www.linkedin.com/in/carlos-astrada/" target="_blank">
+          LinkedIn
+        </Link>
+        .
+      </p>
     </Layout>
   );
 };

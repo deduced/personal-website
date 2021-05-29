@@ -1,0 +1,41 @@
+---
+title: Error Generating JavaScript Bundles Fails
+slug: gatsby-cloud-build-error
+author: deduced
+date: 2021-05-27
+---
+
+Gatsby Cloud is a great resource for hosting your Gatsby site. If you don't know about it and want to learn more, then [head over to the official docs](https://www.gatsbyjs.com/products/cloud/). But, this post is not about how awesome Gatsby Cloud is. It's about a build error that was driving me mad for a few hours.
+
+<br />
+
+## The Build Error
+
+<div style={{ padding: "20px", backgroundColor: "#fdf6e3" }}>
+  <div>00:24:21 AM: success run page queries - 0.007s - 5/5 711.33/s</div>
+  <div>
+    00:24:35 AM: failed Building production JavaScript and CSS bundles - 14.541s
+  </div>
+  <div>00:24:35 AM: ERROR Generating JavaScript bundles failed</div>
+  <div style={{ backgroundColor: "#f5f522" }}>
+    00:24:35 AM: Can't resolve '../components/layout' in
+    '/usr/src/app/www/src/pages'
+  </div>
+  <div>
+    00:24:35 AM: If you're trying to use a package make sure that
+    '../components/layout' is installed. If you're trying to use a local file
+    make sure that the path is correct.
+  </div>
+</div>
+
+When I first saw this error, it seemed like a straight-forward fix. Usually, when a component cannot resolve, it has to do with a typo in the path. The odd thing is that this was all working perfectly on my local machine when I would run `gatsby develop` or `gatsby build`, so obviously the path was correct.
+
+One of the most useful debugging techniques when these type of "mysterious" issues appear is to write down a list of changes since the last successful build. `git log` is also your friend here to review what you did. One of the recent changes I had made was renaming my component files from `Filename.tsx` to `filename.tsx` via my IDE. I had made other changes too in the branch, and all was working locally, so I committed it all and pushed to GitHub.
+
+<br />
+
+## The Fix
+
+After an embarrassing amount of time trying to fix the issue, it dawned on me to check the source code on GitHub. Sure enough, the file names still had the old capitalization.
+
+The fix was simple: `git mv <oldName> <newName>`. Once committed and pushed, all was right in the world again.

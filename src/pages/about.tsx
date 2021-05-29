@@ -8,7 +8,7 @@ const About: React.FC<PageProps> = ({}) => {
       <h1>About</h1>
       <p>
         A blog about full stack web development, entrepreneurship, and data
-        science. The focus is on practical applications, but I'll will include
+        science. The focus is on practical applications, but I will include
         bug-fixes or any other content that I think might be useful to myself or
         the community at large.
       </p>

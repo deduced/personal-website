@@ -19,15 +19,22 @@ const About: React.FC<PageProps> = ({}) => {
         </Link>
       </p>
       <p>
-        If you're curious learn more about me, visit my{" "}
-        <Link to="https://github.com/deduced" target="_blank">
-          GitHub
-        </Link>{" "}
-        or{" "}
-        <Link to="https://www.linkedin.com/in/carlos-astrada/" target="_blank">
-          LinkedIn
-        </Link>
-        .
+        Find me on:
+        <ul>
+          <li>
+            <Link to="https://github.com/deduced" target="_blank">
+              GitHub
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="https://www.linkedin.com/in/carlos-astrada/"
+              target="_blank"
+            >
+              LinkedIn
+            </Link>
+          </li>
+        </ul>
       </p>
     </Layout>
   );

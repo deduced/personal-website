@@ -7,6 +7,7 @@ const ImageBackground = styled(BackgroundImage)`
   background-position: top 20% center;
   background-size: cover;
   height: 50vh;
+  margin-top: 0;
 
   + * {
     margin-top: 0;
@@ -18,6 +19,7 @@ const TextBox = styled("div")`
   display: flex;
   flex-direction: column;
   height: 100%;
+  margin-top: 0;
   justify-content: flex-end;
   padding: 0 calc((100vw - 550px) / 2) 2rem;
   width: 100%;

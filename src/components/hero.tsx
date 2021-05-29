@@ -38,6 +38,10 @@ const TextBox = styled("div")`
     color: #222;
     margin-top: 0.5rem;
   }
+
+  @media (max-width: 615px) {
+    padding-left: 1.25rem;
+  }
 `;
 
 interface HeroProps {}

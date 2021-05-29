@@ -1,10 +1,12 @@
 import React from "react";
 import { format } from "date-fns";
 import { graphql } from "gatsby";
+import { MDXProvider } from "@mdx-js/react";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import { css } from "@emotion/react";
 import Layout from "../components/layout";
 import ReadLink from "../components/read-link";
+import Link from "../components/link";
 
 interface PostTemplateProps {
   data: {
@@ -48,7 +50,13 @@ const PostTemplate: React.FC<PostTemplateProps> = ({ data }) => {
       </p>
 
       <p>
-        <MDXRenderer>{post.body}</MDXRenderer>
+        <MDXProvider
+          components={{
+            a: Link,
+          }}
+        >
+          <MDXRenderer>{post.body}</MDXRenderer>
+        </MDXProvider>
       </p>
       <ReadLink to="/">Back to all posts</ReadLink>
     </Layout>

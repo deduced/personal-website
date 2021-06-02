@@ -1,8 +1,14 @@
 import { graphql } from "gatsby";
+import { FluidObject } from "gatsby-image";
 
 export interface IPostFrontmatter {
   author: string;
   date: string;
+  image: {
+    sharp: {
+      fluid: FluidObject;
+    };
+  };
   slug: string;
   title: string;
 }
@@ -29,6 +35,13 @@ export const postFragments = graphql`
   fragment IPostFrontmatter on MdxFrontmatter {
     author
     date
+    image {
+      sharp: childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
     title
     slug
   }

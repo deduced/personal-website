@@ -11,7 +11,7 @@ import Link from "../components/link";
 
 const PostTemplate: React.FC<IPostTemplateProps> = ({ data }) => {
   const post = data.mdx;
-  const formattedDate = format(new Date(post.frontmatter.date), "yyyy/dd/MM");
+  const formattedDate = format(new Date(post.frontmatter.date), "yyyy/MM/dd");
 
   return (
     <Layout>

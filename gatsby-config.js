@@ -24,7 +24,9 @@ module.exports = {
               lineNumbers: true,
             },
           },
+          { resolve: "gatsby-remark-images" },
         ],
+        plugins: ["gatsby-remark-images"],
       },
     },
     {
